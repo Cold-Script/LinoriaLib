@@ -71,7 +71,7 @@ pcall(function() Library.DevicePlatform = InputService:GetPlatform(); end); -- F
 Library.IsMobile = (Library.DevicePlatform == Enum.Platform.Android or Library.DevicePlatform == Enum.Platform.IOS);
 
 if Library.IsMobile then
-	Library.MinSize = Vector2.new(550, 200); -- Make UI little bit smaller.
+	Library.MinSize = Vector2.new(220, 550); -- Make UI little bit smaller.
 end
 
 local RainbowStep = 0
@@ -4004,7 +4004,7 @@ function Library:CreateWindow(...)
 		local ToggleUIOuter = Library:Create('Frame', {
 			BorderColor3 = Color3.new(0, 0, 0);
 			Position = UDim2.new(0.008, 0, 0.018, 0);
-			Size = UDim2.new(0, 77, 0, 30);
+			Size = UDim2.new(0, 33, 0, 77);
 			ZIndex = 200;
 			Visible = true;
 			Parent = ScreenGui;
@@ -4025,7 +4025,7 @@ function Library:CreateWindow(...)
 	
 		local ToggleUIInnerFrame = Library:Create('Frame', {
 			BackgroundColor3 = Color3.new(1, 1, 1);
-			BorderSizePixel = 0;
+			BorderSizePixel = 5;
 			Position = UDim2.new(0, 1, 0, 1);
 			Size = UDim2.new(1, -2, 1, -2);
 			ZIndex = 202;
@@ -4095,7 +4095,7 @@ function Library:CreateWindow(...)
 	
 		local LockUIInnerFrame = Library:Create('Frame', {
 			BackgroundColor3 = Color3.new(1, 1, 1);
-			BorderSizePixel = 0;
+			BorderSizePixel = 5;
 			Position = UDim2.new(0, 1, 0, 1);
 			Size = UDim2.new(1, -2, 1, -2);
 			ZIndex = 202;
