@@ -46,7 +46,7 @@ local Library = {
 	RiskColor = Color3.fromRGB(255, 50, 50),
 
 	Black = Color3.new(0, 0, 0);
-	Font = Enum.Font.Code,
+	Font = Enum.Font.Oswald,
 
 	OpenedFrames = {};
 	DependencyBoxes = {};
@@ -4060,7 +4060,7 @@ function Library:CreateWindow(...)
 			Size = UDim2.new(1, -4, 1, 0);
 			BackgroundTransparency = 1;
 			Font = Library.Font;
-			Text = "Mở UI";
+			Text = " Mở UI";
 			TextColor3 = Library.FontColor;
 			TextSize = 14;
 			TextXAlignment = Enum.TextXAlignment.Left;
@@ -4130,7 +4130,7 @@ function Library:CreateWindow(...)
 			Size = UDim2.new(1, -4, 1, 0);
 			BackgroundTransparency = 1;
 			Font = Library.Font;
-			Text = "Đóng UI";
+			Text = " Đóng UI";
 			TextColor3 = Library.FontColor;
 			TextSize = 14;
 			TextXAlignment = Enum.TextXAlignment.Left;
