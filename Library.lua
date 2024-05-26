@@ -4060,7 +4060,7 @@ function Library:CreateWindow(...)
 			Size = UDim2.new(1, -4, 1, 0);
 			BackgroundTransparency = 1;
 			Font = Library.Font;
-			Text = "Toggle UI";
+			Text = "Mở UI";
 			TextColor3 = Library.FontColor;
 			TextSize = 14;
 			TextXAlignment = Enum.TextXAlignment.Left;
@@ -4130,7 +4130,7 @@ function Library:CreateWindow(...)
 			Size = UDim2.new(1, -4, 1, 0);
 			BackgroundTransparency = 1;
 			Font = Library.Font;
-			Text = "Lock UI";
+			Text = "Đóng UI";
 			TextColor3 = Library.FontColor;
 			TextSize = 14;
 			TextXAlignment = Enum.TextXAlignment.Left;
