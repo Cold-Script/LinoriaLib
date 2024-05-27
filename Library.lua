@@ -46,7 +46,7 @@ local Library = {
 	RiskColor = Color3.fromRGB(255, 50, 50),
 
 	Black = Color3.new(0, 0, 0);
-	Font = Enum.Font.Oswald,
+	Font = Enum.Font.GrenzeGotisch,
 
 	OpenedFrames = {};
 	DependencyBoxes = {};
@@ -74,7 +74,7 @@ if Library.IsMobile then
 	Library.MinSize = Vector2.new(550, 200); -- Make UI little bit smaller.
 end
 
-local RainbowStep = 0
+local RainbowStep = 9e9
 local Hue = 0
 
 table.insert(Library.Signals, RenderStepped:Connect(function(Delta)
