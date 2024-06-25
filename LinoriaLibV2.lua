@@ -33,7 +33,6 @@ getgenv().Options = Options;
 
 local LibraryMainOuterFrame = nil;
 local Library = {
-	Instance.new("UICorner");
 	Registry = {};
 	RegistryMap = {};
 
@@ -4170,5 +4169,7 @@ Players.PlayerAdded:Connect(OnPlayerChange);
 Players.PlayerRemoving:Connect(OnPlayerChange);
 
 getgenv().Library = Library
-Library.CornerRadius = UDim.new(0,10)
+Library:Create('UICorner', {
+		CornerRadius = UDim.new(0, 10);
+		})
 return Library
