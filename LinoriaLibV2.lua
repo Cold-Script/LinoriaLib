@@ -66,9 +66,6 @@ local Library = {
 	VideoLink = "";
 	TotalTabs = 0;
 };
-Library:Create('UICorner', {
-	CornerRadius = UDim.new(0, 10);
-})
 pcall(function() Library.DevicePlatform = InputService:GetPlatform(); end); -- For safety so the UI library doesn't error.
 Library.IsMobile = (Library.DevicePlatform == Enum.Platform.Android or Library.DevicePlatform == Enum.Platform.IOS);
 
@@ -76,19 +73,19 @@ if Library.IsMobile then
 	Library.MinSize = Vector2.new(550, 200); -- Make UI little bit smaller.
 end
 
-local RainbowStep = 0
-local Hue = 0
+local RainbowStep = 1
+local Hue = 1
 
 table.insert(Library.Signals, RenderStepped:Connect(function(Delta)
 	RainbowStep = RainbowStep + Delta
 
 	if RainbowStep >= (1 / 60) then
-		RainbowStep = 0;
+		RainbowStep = 1;
 
 		Hue = Hue + (1 / 400);
 
 		if Hue > 1 then
-			Hue = 0;
+			Hue = 1;
 		end;
 
 		Library.CurrentRainbowHue = Hue;
@@ -4077,7 +4074,10 @@ function Library:CreateWindow(...)
 		ToggleUIButton.MouseButton1Down:Connect(function()
 			task.spawn(Library.Toggle)
 		end)
-
+Library:Create('UICorner', {
+	CornerRadius = UDim.new(0, 10);
+	Parent = ToggleUIButton
+})
 	-- Lock
 	local LockUIOuter = Library:Create('Frame', {
 			BorderColor3 = Color3.new(0, 0, 0);
@@ -4147,8 +4147,12 @@ function Library:CreateWindow(...)
 		LockUIButton.MouseButton1Down:Connect(function()
 			Library.CantDragForced = not Library.CantDragForced;
 		end)
+	
 	end;
-
+Library:Create('UICorner', {
+	CornerRadius = UDim.new(0, 10);
+	Parent = LockUIButton
+})
 	if Config.AutoShow then task.spawn(Library.Toggle) end
 
 	Window.Holder = Outer;
