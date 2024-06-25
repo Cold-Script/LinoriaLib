@@ -55,13 +55,13 @@ local Library = {
 	ScreenGui = ScreenGui;
 	
 	ActiveTab = nil;
-	Toggled = false;
+	Toggles = false;
 	
 	MinSize = Vector2.new(550, 300);
 	IsMobile = false;
 	DevicePlatform = Enum.Platform.None;
 	CanDrag = true;
-	CantDragForced = false;
+	CantDragForced = true;
 	ShowCustomCursor = true; 
 	VideoLink = "";
 	TotalTabs = 0;
@@ -4074,10 +4074,6 @@ function Library:CreateWindow(...)
 		ToggleUIButton.MouseButton1Down:Connect(function()
 			task.spawn(Library.Toggle)
 		end)
-Library:Create('UICorner', {
-	CornerRadius = UDim.new(0, 10);
-	Parent = ToggleUIButton
-})
 	-- Lock
 	local LockUIOuter = Library:Create('Frame', {
 			BorderColor3 = Color3.new(0, 0, 0);
@@ -4149,10 +4145,6 @@ Library:Create('UICorner', {
 		end)
 	
 	end;
-Library:Create('UICorner', {
-	CornerRadius = UDim.new(0, 10);
-	Parent = LockUIButton
-})
 	if Config.AutoShow then task.spawn(Library.Toggle) end
 
 	Window.Holder = Outer;
@@ -4175,5 +4167,9 @@ Players.PlayerAdded:Connect(OnPlayerChange);
 Players.PlayerRemoving:Connect(OnPlayerChange);
 
 getgenv().Library = Library
-
+	
+Library:Create('UICorner', {
+	CornerRadius = UDim.new(0, 10);
+	Parent = Library
+})
 return Library
