@@ -66,7 +66,9 @@ local Library = {
 	VideoLink = "";
 	TotalTabs = 0;
 };
-
+Library:Create('UICorner', {
+	CornerRadius = UDim.new(0, 10);
+})
 pcall(function() Library.DevicePlatform = InputService:GetPlatform(); end); -- For safety so the UI library doesn't error.
 Library.IsMobile = (Library.DevicePlatform == Enum.Platform.Android or Library.DevicePlatform == Enum.Platform.IOS);
 
@@ -4169,7 +4171,5 @@ Players.PlayerAdded:Connect(OnPlayerChange);
 Players.PlayerRemoving:Connect(OnPlayerChange);
 
 getgenv().Library = Library
-Library:Create('UICorner', {
-		CornerRadius = UDim.new(0, 10);
-		})
+
 return Library
