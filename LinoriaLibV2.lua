@@ -39,9 +39,13 @@ local Library = {
 	HudRegistry = {};
 
 	FontColor = Color3.fromRGB(255, 255, 255);
-	MainColor = Color3.fromRGB(28, 28, 28);
-	BackgroundColor = Color3.fromRGB(20, 20, 20);
-	AccentColor = Color3.fromHSV(tick() % 5/5, 1, 1);
+	MainColor = Color3.fromRGB(0,0,0);
+	BackgroundColor = Color3.fromRGB(0,0,0);
+	task.spawn(function()
+			while wait() do
+	AccentColor = Color3.fromHSV(tick() % 5/5, 1, 1)
+			end
+		end)
 	OutlineColor = Color3.fromRGB(50, 50, 50);
 	RiskColor = Color3.fromRGB(255, 50, 50),
 
