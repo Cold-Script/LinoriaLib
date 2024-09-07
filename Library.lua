@@ -356,7 +356,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
 	local Tooltip = Library:Create('Frame', {
 		BackgroundColor3 = Library.MainColor,
 		BorderColor3 = Library.OutlineColor,
-
+                BackgroundTransparency = 1,
 		Size = UDim2.fromOffset(X + 5, Y + 4),
 		ZIndex = 100,
 		Parent = Library.ScreenGui,
@@ -379,6 +379,7 @@ function Library:AddToolTip(InfoStr, HoverInstance)
 	Library:AddToRegistry(Tooltip, {
 		BackgroundColor3 = 'MainColor';
 		BorderColor3 = 'OutlineColor';
+		BackgroundTransparency = 1;
 	});
 
 	Library:AddToRegistry(Label, {
@@ -3277,6 +3278,7 @@ function Library:CreateWindow(...)
 	local Outer = Library:Create('Frame', {
 		AnchorPoint = Config.AnchorPoint;
 		BackgroundColor3 = Color3.new(0, 0, 0);
+		BackgroundTransparency = 1;
 		BorderSizePixel = 0;
 		Position = Config.Position;
 		Size = Config.Size;
@@ -3293,6 +3295,7 @@ function Library:CreateWindow(...)
 
 	local Inner = Library:Create('Frame', {
 		BackgroundColor3 = Library.MainColor;
+		BackgroundTransparency = 1;
 		BorderColor3 = Library.AccentColor;
 		BorderMode = Enum.BorderMode.Inset;
 		Position = UDim2.new(0, 1, 0, 1);
@@ -3303,6 +3306,7 @@ function Library:CreateWindow(...)
 
 	Library:AddToRegistry(Inner, {
 		BackgroundColor3 = 'MainColor';
+		BackgroundTransparency = 1;
 		BorderColor3 = 'AccentColor';
 	});
 
@@ -3318,6 +3322,7 @@ function Library:CreateWindow(...)
 	local MainSectionOuter = Library:Create('Frame', {
 		BackgroundColor3 = Library.BackgroundColor;
 		BorderColor3 = Library.OutlineColor;
+		BackgroundTransparency = 1;
 		Position = UDim2.new(0, 8, 0, 25);
 		Size = UDim2.new(1, -16, 1, -33);
 		ZIndex = 1;
@@ -3326,12 +3331,14 @@ function Library:CreateWindow(...)
 
 	Library:AddToRegistry(MainSectionOuter, {
 		BackgroundColor3 = 'BackgroundColor';
+		BackgroundTransparency = 1;
 		BorderColor3 = 'OutlineColor';
 	});
 
 	local MainSectionInner = Library:Create('Frame', {
 		BackgroundColor3 = Library.BackgroundColor;
 		BorderColor3 = Color3.new(0, 0, 0);
+		BackgroundTransparency = 1;
 		BorderMode = Enum.BorderMode.Inset;
 		Position = UDim2.new(0, 0, 0, 0);
 		Size = UDim2.new(1, 0, 1, 0);
@@ -3341,6 +3348,7 @@ function Library:CreateWindow(...)
 
 	Library:AddToRegistry(MainSectionInner, {
 		BackgroundColor3 = 'BackgroundColor';
+		BackgroundTransparency = 1;
 	});
 
 	local TabArea = Library:Create('ScrollingFrame', {
@@ -3386,6 +3394,7 @@ function Library:CreateWindow(...)
 	local TabContainer = Library:Create('Frame', {
 		BackgroundColor3 = Library.MainColor;
 		BorderColor3 = Library.OutlineColor;
+		BackgroundTransparency = 1;
 		Position = UDim2.new(0, 8, 0, 30);
 		Size = UDim2.new(1, -16, 1, -38);
 		ZIndex = 2;
@@ -3398,6 +3407,7 @@ function Library:CreateWindow(...)
 		BorderSizePixel = 0;
 		Position = UDim2.new(0, 1, 0, 1);
 		Size = UDim2.new(1, -2, 1, -2);
+		BackgroundTransparency = 1;
 		ZIndex = 2;
 		Visible = false;
 		Volume = 0;
@@ -3409,6 +3419,7 @@ function Library:CreateWindow(...)
 	Library:AddToRegistry(TabContainer, {
 		BackgroundColor3 = 'MainColor';
 		BorderColor3 = 'OutlineColor';
+		BackgroundTransparency = 1;
 	});
 
 	function Window:SetWindowTitle(Title)
