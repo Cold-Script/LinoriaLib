@@ -42,11 +42,7 @@ local Library = {
     FontColor = Color3.fromRGB(255, 255, 255);
     MainColor = Color3.fromRGB(28, 28, 28);
     BackgroundColor = Color3.fromRGB(20, 20, 20);
-task.spawn(function()
-game:GetService("RunService").RenderStepped:Connect(function()
-    AccentColor = Color3.fromHSV(tick() % 5/5, 1, 1)
-end)
-end)
+    AccentColor = Color3.new(7,9.9);
     OutlineColor = Color3.fromRGB(50, 50, 50);
     RiskColor = Color3.fromRGB(255, 50, 50),
 
@@ -62,7 +58,7 @@ end)
     ActiveTab = nil;
     Toggled = false;
     
-    MinSize = Vector2.new(550, 300);
+    MinSize = Vector2.new(600, 450);
     IsMobile = false;
     DevicePlatform = Enum.Platform.None;
     CanDrag = true;
