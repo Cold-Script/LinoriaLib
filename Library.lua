@@ -63,7 +63,7 @@ local Library = {
     DevicePlatform = Enum.Platform.None;
     CanDrag = true;
     CantDragForced = false;
-    NotifySide = _G.NotifySide;
+    NotifySide = "Right";
     ShowCustomCursor = true; 
     VideoLink = "";
     TotalTabs = 0;
@@ -4239,7 +4239,20 @@ function Library:CreateWindow(...)
             Parent = ToggleUIInnerFrame;
         });
         local ToggleUICorner = Library:Create('UICorner', {
+            CornerRadius = UDim.new(1,0)
             Parent = ToggleUIButton;
+        });  
+        local ToggleUIInnerFrameUICorner = Library:Create('UICorner', {
+            CornerRadius = UDim.new(1,0)
+            Parent = ToggleUIInnerFrame;
+        });      
+        local ToggleUIInnerUICorner = Library:Create('UICorner', {
+            CornerRadius = UDim.new(1,0)
+            Parent = ToggleUIInner;
+        });  
+        local ToggleUIOuterUICorner = Library:Create('UICorner', {
+            CornerRadius = UDim.new(1,0)
+            Parent = ToggleUIOuter;
         });  
             
         Library:MakeDraggable(ToggleUIOuter);
@@ -4312,9 +4325,21 @@ function Library:CreateWindow(...)
             Parent = LockUIInnerFrame;
         });
         local LockUICorner = Library:Create('UICorner', {
+            CornerRadius = UDim.new(1,0)
             Parent = LockUIButton;
         });  
-            
+        local LockUIInnerFrameUICorner = Library:Create('UICorner', {
+            CornerRadius = UDim.new(1,0)
+            Parent = LockUIInnerFrame;
+        });      
+        local LockUIInnerUICorner = Library:Create('UICorner', {
+            CornerRadius = UDim.new(1,0)
+            Parent = LockUIInner;
+        });  
+        local LockUIOuterUICorner = Library:Create('UICorner', {
+            CornerRadius = UDim.new(1,0)
+            Parent = LockUIOuter;
+        });  
         Library:MakeDraggable(LockUIOuter);
         
         LockUIButton.MouseButton1Down:Connect(function()
