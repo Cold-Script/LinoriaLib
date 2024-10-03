@@ -25,3 +25,4 @@ Used in the Linoria script hub: https://kyaru.cloud
 - Stefanuk: Extending library functionality.
 - matas3535: Creator of Splix.
 - RectangularObject: Fixing UI bugs, extending library functionality.
+- rechedmcvn : adding misc new lol
