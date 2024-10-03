@@ -63,7 +63,7 @@ local Library = {
     DevicePlatform = Enum.Platform.None;
     CanDrag = true;
     CantDragForced = false;
-    NotifySide = "Left";
+    NotifySide = _G.NotifySide;
     ShowCustomCursor = true; 
     VideoLink = "";
     TotalTabs = 0;
@@ -4238,7 +4238,10 @@ function Library:CreateWindow(...)
             ZIndex = 203;
             Parent = ToggleUIInnerFrame;
         });
-    
+        local ToggleUICorner = Library:Create('UICorner', {
+            Parent = ToggleUIButton;
+        });  
+            
         Library:MakeDraggable(ToggleUIOuter);
 
         ToggleUIButton.MouseButton1Down:Connect(function()
@@ -4308,7 +4311,10 @@ function Library:CreateWindow(...)
             ZIndex = 203;
             Parent = LockUIInnerFrame;
         });
-    
+        local LockUICorner = Library:Create('UICorner', {
+            Parent = LockUIButton;
+        });  
+            
         Library:MakeDraggable(LockUIOuter);
         
         LockUIButton.MouseButton1Down:Connect(function()
