@@ -46,8 +46,9 @@ local Library = {
     OutlineColor = Color3.fromRGB(50, 50, 50);
     RiskColor = Color3.fromRGB(255, 50, 50),
 
+    BackgroundTransparency = 0.5
     Black = Color3.new(0, 0, 0);
-    Font = Enum.Font.Code,
+    Font = Enum.Font.FredokaOne,
 
     OpenedFrames = {};
     DependencyBoxes = {};
@@ -58,7 +59,7 @@ local Library = {
     ActiveTab = nil;
     Toggled = false;
     
-    MinSize = Vector2.new(550, 300);
+    MinSize = Vector2.new(550, 220);
     IsMobile = false;
     DevicePlatform = Enum.Platform.None;
     CanDrag = true;
@@ -4363,7 +4364,9 @@ function Library:CreateWindow(...)
         ToggleUIButton.MouseButton1Down:Connect(function()
             task.spawn(Library.Toggle)
         end)
-
+        local ToggleUICorner = Library:Create('UICorner', {
+            Parent = ToggleUIButton;
+        });
     -- Lock
     local LockUIOuter = Library:Create('Frame', {
             BorderColor3 = Color3.new(0, 0, 0);
@@ -4427,7 +4430,9 @@ function Library:CreateWindow(...)
             ZIndex = 203;
             Parent = LockUIInnerFrame;
         });
-    
+        local LockUICorner = Library:Create('UICorner', {
+            Parent = LockUIButton;
+        });
         Library:MakeDraggable(LockUIOuter);
         
         LockUIButton.MouseButton1Down:Connect(function()
