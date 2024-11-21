@@ -31,7 +31,6 @@ getgenv().Linoria = {
 getgenv().Toggles = Toggles; -- if you load infinite yeild after you executed any script with LinoriaLib it will just break the whole UI lib :/ (thats why I added getgenv().Linoria)
 getgenv().Options = Options;
 
-local LibraryMainOuterFrame = nil;
 local Library = {
 	Registry = {};
 	RegistryMap = {};
@@ -41,12 +40,12 @@ local Library = {
 	FontColor = Color3.fromRGB(255, 255, 255);
 	MainColor = Color3.fromRGB(28, 28, 28);
 	BackgroundColor = Color3.fromRGB(20, 20, 20);
-	AccentColor = Color3.fromRGB(0, 85, 255);
+	AccentColor = Color3.fromRGB(50, 255, 175);
 	OutlineColor = Color3.fromRGB(50, 50, 50);
 	RiskColor = Color3.fromRGB(255, 50, 50),
 
 	Black = Color3.new(0, 0, 0);
-	Font = Enum.Font.Jura,
+	Font = Enum.Font.Michroma,
 
 	OpenedFrames = {};
 	DependencyBoxes = {};
@@ -66,6 +65,7 @@ local Library = {
 	VideoLink = "";
 	TotalTabs = 0;
 };
+local LibraryMainOuterFrame = nil;
 
 pcall(function() Library.DevicePlatform = InputService:GetPlatform(); end); -- For safety so the UI library doesn't error.
 Library.IsMobile = (Library.DevicePlatform == Enum.Platform.Android or Library.DevicePlatform == Enum.Platform.IOS);
