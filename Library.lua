@@ -45,7 +45,7 @@ local Library = {
 	RiskColor = Color3.fromRGB(50, 255, 175),
 
 	Black = Color3.new(0, 0, 0);
-	Font = Enum.Font.FredokaOne,
+	Font = Enum.Font.Code,
 
 	OpenedFrames = {};
 	DependencyBoxes = {};
