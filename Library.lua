@@ -42,10 +42,10 @@ local Library = {
 	BackgroundColor = Color3.fromRGB(20, 20, 20);
 	AccentColor = Color3.fromRGB(50, 255, 175);
 	OutlineColor = Color3.fromRGB(50, 50, 50);
-	RiskColor = Color3.fromRGB(50, 255, 175),
+	RiskColor = Color3.fromRGB(255, 0, 0),
 
 	Black = Color3.new(0, 0, 0);
-	Font = Enum.Font.Code,
+	Font = Enum.Font.Roboto,
 
 	OpenedFrames = {};
 	DependencyBoxes = {};
