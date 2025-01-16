@@ -45,7 +45,7 @@ local Library = {
 	RiskColor = Color3.fromRGB(255, 0, 0),
 
 	Black = Color3.new(0, 0, 0);
-	Font = Enum.Font.Roboto,
+	Font = Enum.Font.Code,
 
 	OpenedFrames = {};
 	DependencyBoxes = {};
@@ -72,7 +72,7 @@ pcall(function() Library.DevicePlatform = InputService:GetPlatform(); end); -- F
 Library.IsMobile = (Library.DevicePlatform == Enum.Platform.Android or Library.DevicePlatform == Enum.Platform.IOS);
 
 if Library.IsMobile then
-	Library.MinSize = Vector2.new(550, 200); -- Make UI little bit smaller.
+	Library.MinSize = Vector2.new(550, 440); -- Make UI little bit smaller.
 end
 
 local RainbowStep = 9e9
